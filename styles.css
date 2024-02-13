@@ -1,0 +1,192 @@
+@font-face {
+  font-family: "Zoho Puvi";
+  src:
+    url("./fonts/puvi-regular.ttf") format("ttf"),
+    url("./fonts/puvi-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none; /* Same as user-select, just for older Safari versions */
+  user-select: none; /* Doesn't allow text selection, remove or keep as you see fit */
+}
+
+html, body {
+  position: fixed;
+  overflow: hidden;
+}
+
+img {
+  pointer-events: none; /* Removes options related to images on right-click. once again, remove or keep as you see fit */
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+#player {
+  background-color: rgba(17, 17, 17, 0.6);
+  color: #fff;
+  font-family: 'Zoho Puvi', Helvetica, Arial;
+  font-size: 2em;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#album-art-wrapper {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 1em 0em 1em 1em;
+}
+
+#player img {
+  max-width: 100%;
+  max-height: 60vmin;
+  border-radius: 10px;
+  align-self: center;
+}
+
+#info {
+  width: 80%;
+  padding: 1em;
+}
+
+#links {
+  margin: 1em 0em;
+  font-size: 80%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#links a {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 0.2em;
+  margin-right: 0.2em;
+}
+
+#player-status {
+  margin-bottom: 0.95em;
+}
+
+#player-time {
+  position: relative;
+  float: right;
+  top: -2em;
+  font-weight: bold;
+}
+
+#player-progress-back {
+  border: 0.15em solid #eee;
+  height: 1em;
+  border-radius: 10px;
+}
+
+#player-progress {
+  background-color: #eee;
+  border: 0.1em solid transparent;
+  height: 0.8em;
+  border-radius: 4px;
+  transition: width .5s;
+}
+
+#player-song {
+  font-style: italic;
+}
+
+.background {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -10;
+  background-color: #111;
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(.5em);
+  position: fixed;
+  transition: background-image 0.5s ease-in;
+  transform: scale(1.03);
+}
+
+footer {
+  float: right;
+  font-size: .5em;
+  margin-top: 3px;
+}
+
+footer a {
+  border: none;
+  text-decoration: underline;
+}
+
+/* Maybe, possibly not the best possible way to implement the album cover scaling
+but, I mean... it works! */
+
+@media only screen and (max-width: 860px) {
+  #album-art-wrapper {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 825px) {
+  #album-art-wrapper {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #album-art-wrapper {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  #album-art-wrapper {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  #album-art-wrapper {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #player {
+    font-size: 1.5em;
+  }
+  #links {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #player-progress,
+  #player-progress-back {
+    display: none;
+    border: none;
+  }
+  #player-time {
+    float: left;
+    top: 0;
+  }
+  footer {
+    float: left;
+    margin-right: 50px;
+  }
+}

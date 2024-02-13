@@ -1,0 +1,52 @@
+{
+  "timestamp": 1707850238334,
+  "progress_ms": 57905,
+  "item": {
+    "album": {
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6NeoLSPGwJLfeisvM36SMi"
+          },
+          "name": "SQUARE ENIX MUSIC"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/3VV4BLl2Eik6xVyHXlDjLK"
+      },
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b2736011819525a1d54e78836426",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e026011819525a1d54e78836426",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d000048516011819525a1d54e78836426",
+          "width": 64
+        }
+      ],
+      "name": "FINAL FANTASY XIII-2 Original Soundtrack"
+    },
+    "artists": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/3d72A9fpAQyib60DkaqAIM"
+        },
+        "name": "鈴木光人"
+      }
+    ],
+    "duration_ms": 196346,
+    "external_urls": {
+      "spotify": "https://open.spotify.com/track/78twuJpTk8PXjfelEIzOO4"
+    },
+    "is_local": false,
+    "name": "Parallel Worlds - Aggressive Mix"
+  },
+  "is_playing": false
+}
