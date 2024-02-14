@@ -1,43 +1,27 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="./styles.css">
-  <link rel="preload" href="./styles.css" as="style" type="text/css">
-  <link rel="preconnect" href="https://i.scdn.co"> <!-- Establish a connection to Spotify's album cover thingy early (preconnect) to load album covers faster  -->
+  <link rel="stylesheet" href="./website-styles.css">
+  <link rel="preload" href="./website-styles.css" as="style" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Modified Spotify-Widget</title>
-  <meta name="robots" content="noindex, nofollow"> <!-- Tell search engine crawlers not to index this page or follow links on it -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>ikudanet/nowplaying</title>
 </head>
 
 <body>
-  <main>
-    <div id="player">
-      <div id="album-art-wrapper">
-        <img id="player-album-art" alt="">
-      </div>
-      <div id="info">
-        <div id="player-song"></div>
-        <div id="player-artist"></div>
-        <div id="links">
-          <a id="player-song-link" href="" target="_blank">🎵 Song</a>
-          <a id="player-artist-link" href="" target="_blank">🧑‍🎤 Artist</a>
-          <a id="player-album-link" href="" target="_blank">💽 Album</a>
-        </div>
-        <div id="player-status"></div>
-        <div id="player-time"></div>
-        <div id="player-progress-back">
-          <div id="player-progress"></div>
-        </div>
-        <footer>
-          Modified <a href="https://github.com/Naushikha/Spotify-Widget" target="_blank">Spotify-Widget</a>
-        </footer>
-      </div>
-    </div>
-    <div id="player-background" class="background"></div>
-  </main>
-  <script src="./script.js"></script>
+  <a class="skiplink" href="#main-content">skip to content</a>
+  <a href="https://github.com/ikudanet/nowplaying">View on GitHub</a>
+  <hr>
+  <div id="main-content">
+    <p>
+      This site contains my modified versions of <a href="https://github.com/Naushikha" target="_blank">Naushikha's Spotify-Widget</a>.
+    </p>
+    <ul>
+      <li><a href="./small-widget/index.html">View the modified Spotify-Widget</a></li>
+      <li><a href="./fullscreen-widget/index.html" target="_blank">View the fullscreen version</a> (Opens in a new tab)</li>
+    </ul>
+  </div>
 </body>
 
 </html>

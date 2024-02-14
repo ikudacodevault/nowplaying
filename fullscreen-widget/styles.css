@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Zoho Puvi";
   src:
-    url("./fonts/puvi-regular.ttf") format("ttf"),
-    url("./fonts/puvi-regular.woff2") format("woff2");
+    url("../fonts/puvi-regular.ttf") format("ttf"),
+    url("../fonts/puvi-regular.woff2") format("woff2");
   font-display: swap;
 }
 

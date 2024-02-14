@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <link rel="preload" href="./styles.css" as="style" type="text/css">
+  <link rel="preconnect" href="https://i.scdn.co"> <!-- Establish a connection to Spotify's album cover thingy early (preconnect) to load album covers faster  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modified Spotify-Widget</title>
+  <meta name="robots" content="noindex, nofollow"> <!-- Tell search engine crawlers not to index this page or follow links on it -->
+</head>
+
+<body>
+  <main>
+    <div id="player">
+      <div id="album-art-wrapper">
+        <img id="player-album-art" alt="">
+      </div>
+      <div id="info">
+        <div id="player-song"></div>
+        <div id="player-artist"></div>
+        <div id="links">
+          <a id="player-song-link" href="" target="_blank">🎵 Song</a>
+          <a id="player-artist-link" href="" target="_blank">🧑‍🎤 Artist</a>
+          <a id="player-album-link" href="" target="_blank">💽 Album</a>
+        </div>
+        <div id="player-status"></div>
+        <div id="player-time"></div>
+        <div id="player-progress-back">
+          <div id="player-progress"></div>
+        </div>
+        <footer>
+          Modified <a href="https://github.com/Naushikha/Spotify-Widget" target="_blank">Spotify-Widget</a>
+        </footer>
+      </div>
+    </div>
+    <div id="player-background" class="background"></div>
+  </main>
+  <script src="./script.js"></script>
+</body>
+
+</html>

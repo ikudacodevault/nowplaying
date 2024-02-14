@@ -1,0 +1,141 @@
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    * {user-select: none !important;}
+    img {pointer-events: none !important;}
+  </style>
+</head>
+
+<div id="player" style="background-color: rgba(17, 17, 17, 0.6); color: #fff; font-family: Helvetica, Arial; font-size: 5vmin; border-radius: 20px; width: 100%; height: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+  <div style="width: 20%; display: flex; justify-content: center; padding-left: 1em;">
+    <img id="player-album-art" style="max-width: 100%; max-height: 60vmin; border-radius: 10px; align-self: center;" />
+  </div>
+  <div style="width: 80%; margin: 1em;">
+    <div id="player-song" style="font-size: 2em;"></div>
+    <div id="player-artist" style="font-size: 1.3em; margin-bottom: 1em;"></div>
+    <div style="margin-bottom: 1em;">
+      <a id="player-song-link" href="" target="_blank" style="color: rgba(255, 255, 255, 1); text-decoration: none; border: 1px solid rgba(255, 255, 255, 1); border-radius: 10px; padding: 0.2em; margin-right: 0.2em;">🎵 Song</a>
+      <a id="player-artist-link" href="" target="_blank" style="color: rgba(255, 255, 255, 1); text-decoration: none; border: 1px solid rgba(255, 255, 255, 1); border-radius: 10px; padding: 0.2em; margin-right: 0.2em;">🧑‍🎤 Artist</a>
+      <a id="player-album-link" href="" target="_blank" style="color: rgba(255, 255, 255, 1); text-decoration: none; border: 1px solid rgba(255, 255, 255, 1); border-radius: 10px; padding: 0.2em; margin-right: 0.2em;">💽 Album</a>
+    </div>
+    <div id="player-status" style="margin: 2em 0 1em 0"></div>
+    <div id="player-time" style="position: relative; float: right; top: -2em; font-weight: bold;"></div>
+    <div id="player-progress-back" style="border: 0.15em solid #eee; height: 1em; border-radius: 10px;">
+      <div id="player-progress" style="background-color: #eee; border: 0.1em solid transparent; height: 0.8em; border-radius: 10px; transition: width 0.2s;"></div>
+    </div>
+    <div style="float: right; font-size: .9em; margin-top: 3px;">
+      <a href="https://github.com/Naushikha/Spotify-Widget" target="_blank" style="color: rgba(255, 255, 255, 1);">Spotify-Widget</a>
+      by
+      <a href="https://naushikha.com" target="_blank" style="color: rgba(255, 255, 255, 1);">Naushikha</a>
+    </div>
+  </div>
+</div>
+<div id="player-background" class="background" style="left: 0; right: 0; top: 0; bottom: 0; z-index: -10; background-color: rgba(17, 17, 17, 1); background-position: center center; background-size: 100%; filter: blur(.3em); position: absolute; transition: background-image 0.5s ease-in;"></div>
+
+<script>
+var songData, progressSeconds, totalSeconds, progressInterval;
+
+function updatePlayer() { // Change link below to the URL of your worker
+  fetch(`https://ikudanet.github.io/nowplaying/example-api-response.json`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.hasOwnProperty("NOTICE")) {
+        document.getElementById(
+          "player-song"
+        ).innerHTML = `User isn't playing anything.`; // Change user to your username / name
+        document.getElementById("player-artist").innerHTML = "  ";
+        return;
+      }
+      songData = data;
+      document.getElementById("player-song").innerHTML = data.item.name;
+      document.getElementById("player-artist").innerHTML =
+        data.item.artists[0].name;
+      document.getElementById("player-status").innerHTML = data.is_playing
+        ? `▶️ User's now playing...` // Change user to your username / name
+        : `⏸ User has paused.`; // Change user to your username / name
+      document
+        .getElementById("player-album-art")
+        .setAttribute("src", data.item.album.images[1].url);
+      document
+        .getElementById("player-progress")
+        .setAttribute(
+          "style",
+          document.getElementById("player-progress").getAttribute("style") +
+            `width: ${(data.progress_ms * 100) / data.item.duration_ms}%`
+        );
+
+      document.getElementById(
+        "player-background"
+      ).style.backgroundImage = `url(${data.item.album.images[1].url})`;
+
+      // Set the links to spotify stuff
+      document
+        .getElementById("player-song-link")
+        .setAttribute("href", data.item.external_urls.spotify);
+      document
+        .getElementById("player-artist-link")
+        .setAttribute("href", data.item.artists[0].external_urls.spotify);
+      document
+        .getElementById("player-album-link")
+        .setAttribute("href", data.item.album.external_urls.spotify);
+
+      // Timer to show updates on progress bar and time
+      // https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
+      progressSeconds = Math.ceil(songData.progress_ms / 1000);
+      totalSeconds = Math.ceil(songData.item.duration_ms / 1000);
+      // Clear existing interval before setting a new one
+      clearInterval(progressInterval);
+      // Process progress only if a song is in 'playing' state
+      if (songData.is_playing) {
+        progressInterval = setInterval(setProgress, 1000);
+      } else {
+        setProgress();
+      }
+
+      // Hide all the extra things in mobile (<410px)
+      if (document.getElementById("player").clientWidth < 410) {
+        // Hide links
+        document.getElementById("player-song-link").style.display = "none";
+        document.getElementById("player-artist-link").style.display = "none";
+        document.getElementById("player-album-link").style.display = "none";
+
+        // Hide duration
+        document.getElementById("player-time").style.display = "none";
+      }
+    });
+}
+
+function setProgress() {
+  if (progressSeconds > totalSeconds) {
+    clearInterval(progressInterval);
+    updatePlayer();
+    return;
+  }
+  ++progressSeconds;
+  var totalLabel =
+    pad(parseInt(totalSeconds / 60)) + ":" + pad(totalSeconds % 60);
+  var progressLabel =
+    pad(parseInt(progressSeconds / 60)) + ":" + pad(progressSeconds % 60);
+  document.getElementById("player-time").innerHTML =
+    progressLabel + " / " + totalLabel;
+  document.getElementById("player-progress").style.width = `${
+    (progressSeconds * 100) / totalSeconds
+  }%`;
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+
+// Load player for the first time
+updatePlayer();
+
+// Fetch new data every 30 seconds
+setInterval(updatePlayer, 30000);
+
+</script>
