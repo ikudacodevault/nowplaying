@@ -14,7 +14,7 @@ var playerElements = {
 var songData, progressSeconds, totalSeconds, progressInterval;
 
 function updatePlayer() { // Replace the URL below with the one to your worker
-  fetch(`https://ikudanet.github.io/nowplaying/example-api-response.json`)
+  fetch(`https://oss.ikuda.net/nowplaying/example-api-response.json`)
     .then((response) => response.json())
     .then((data) => {
       if (data.hasOwnProperty("NOTICE")) { // You can replace "User" with your name / username
