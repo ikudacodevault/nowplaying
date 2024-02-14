@@ -1,4 +1,4 @@
-My version(s) of [@Naushikha](https://github.com/Naushikha)'s [Spotify-Widget](). 
+My version(s) of [@Naushikha](https://github.com/Naushikha)'s [Spotify-Widget](https://github.com/Naushikha/Spotify-Widget). 
 
 These versions assume you already have your tokens, as my version of the worker doesn't have the same functionality as the original. Other than that, the setup instructions don't differ much from [the original's](https://github.com/Naushikha/Spotify-Widget).
 
