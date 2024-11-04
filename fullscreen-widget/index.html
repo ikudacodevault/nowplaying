@@ -14,28 +14,20 @@
 <body>
   <main>
     <div id="player">
-      <div id="album-art-wrapper">
+      <div id="album-art-wrapper" aria-hidden="true">
         <img id="player-album-art" alt="">
       </div>
       <div id="info">
-        <div id="player-song"></div>
-        <div id="player-artist"></div>
-        <div id="links">
-          <a id="player-song-link" href="" target="_blank">🎵 Song</a>
-          <a id="player-artist-link" href="" target="_blank">🧑‍🎤 Artist</a>
-          <a id="player-album-link" href="" target="_blank">💽 Album</a>
-        </div>
+        <a id="player-song-link" target="_blank"><div id="player-song"></div></a>
+        <a id="player-artist-link" target="_blank"><div id="player-artist"></div></a>
         <div id="player-status"></div>
-        <div id="player-time"></div>
-        <div id="player-progress-back">
+        <div id="player-time" aria-hidden="true"></div>
+        <div id="player-progress-back" aria-hidden="true">
           <div id="player-progress"></div>
         </div>
-        <footer>
-          Modified <a href="https://github.com/Naushikha/Spotify-Widget" target="_blank">Spotify-Widget</a>
-        </footer>
       </div>
     </div>
-    <div id="player-background" class="background"></div>
+    <div id="player-background" class="background" aria-hidden="true"></div>
   </main>
   <script src="./script.js"></script>
 </body>

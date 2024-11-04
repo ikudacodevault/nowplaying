@@ -105,11 +105,13 @@ async function handleNowPlaying(request) {
     });
 
   const corsHeaders = {
-    "Access-Control-Allow-Origin": "set this to https://yourdomain.tld or allow all with: *",
+    "Access-Control-Allow-Origin": "set this to https://yourdomain.tld or allow all with: *", // Example: "Access-Control-Allow-Origin": "https://ikuda.net",
     "Access-Control-Allow-Methods": "GET",
     "Access-Control-Max-Age": "86400",
-    "X-Robots-Tag": "noindex", // Tells search engines not to index API responses
-    "Cache-Control": "no-cache, no-store, must-revalidate", // I added this to ensure the client always receives the uncached, latest API response
+    "X-Robots-Tag": "noindex",
+    "Cache-Control": "no-cache, no-store, must-revalidate", // Tells browsers not to cache the response.
+    "Content-Security-Policy": "default-src 'none';",
+    "Content-Type": "application/json; charset=utf-8"
   };
 
   if (songData === null || Object.keys(songData).length === 0) {

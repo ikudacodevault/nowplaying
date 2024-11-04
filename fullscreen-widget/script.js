@@ -14,7 +14,7 @@ var playerElements = {
 var songData, progressSeconds, totalSeconds, progressInterval;
 
 function updatePlayer() { // Replace the URL below with the one to your worker
-  fetch(`https://ikudanet.github.io/nowplaying/example-api-response.json`)
+  fetch(`https://nowplaying.icv.ikuda.net/example-api-response.json`)
     .then((response) => response.json())
     .then((data) => {
       if (data.hasOwnProperty("NOTICE")) { // You can replace "User" with your name / username
@@ -62,4 +62,4 @@ function pad(val) {
 }
 
 updatePlayer();
-setInterval(updatePlayer, 30000); // Refreshes the player (a.k.a checks API) every 30 seconds, lower or higher the rate as you see fit
+setInterval(updatePlayer, 30000); // Refreshes the player (a.k.a checks API) every 30 seconds, lower or higher the rate as you see fit. Note that higher refresh rates will use more worker requests, this can be annoying on the free plan.

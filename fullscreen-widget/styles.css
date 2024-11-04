@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "Zoho Puvi";
+  font-family: "Urbanist";
   src:
-    url("./fonts/puvi-regular.ttf") format("ttf"),
-    url("./fonts/puvi-regular.woff2") format("woff2");
+    url("./fonts/urbanist-variable.woff2") format("woff2"),
+    url("./fonts/urbanist-variable.woff") format("woff");
+  font-weight: 300;
   font-display: swap;
 }
 
@@ -13,9 +14,21 @@
   user-select: none; /* Doesn't allow text selection, remove or keep as you see fit */
 }
 
+:root {
+  --color-fg: #fff;
+  --color-bg: #111;
+  --color-player-background: rgba(17, 17, 17, 0.6);
+  --color-player-progress: #eee;
+  --font-family: 'Urbanist', Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+}
+
 html, body {
+  color: var(--color-fg);
+  background: var(--color-bg);
   position: fixed;
   overflow: hidden;
+  font-family: var(--font-family)
 }
 
 img {
@@ -28,9 +41,8 @@ main {
 }
 
 #player {
-  background-color: rgba(17, 17, 17, 0.6);
-  color: #fff;
-  font-family: 'Zoho Puvi', Helvetica, Arial;
+  color: var(--color-fg);
+  background-color: var(--color-player-background);
   font-size: 2em;
   width: 100vw;
   height: 100vh;
@@ -59,46 +71,41 @@ main {
   padding: 1em;
 }
 
-#links {
-  margin: 1em 0em;
-  font-size: 80%;
-}
-
-a {
-  color: #fff;
+a, a:visited, a:active, a:hover {
+  color: var(--color-fg);
   text-decoration: none;
 }
 
-#links a {
-  border: 1px solid #fff;
-  border-radius: 10px;
-  padding: 0.2em;
-  margin-right: 0.2em;
+#player-song-link,
+#player-artist-link {
+  width: fit-content;
+  display: block;
 }
 
 #player-status {
-  margin-bottom: 0.95em;
+  margin-bottom: .95em;
+  margin-top: .5em;
 }
 
 #player-time {
   position: relative;
   float: right;
-  top: -2em;
+  top: -2.2em;
   font-weight: bold;
 }
 
 #player-progress-back {
-  border: 0.15em solid #eee;
+  border: 2px solid var(--color-player-progress);
   height: 1em;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 #player-progress {
-  background-color: #eee;
-  border: 0.1em solid transparent;
-  height: 0.8em;
-  border-radius: 4px;
-  transition: width .5s;
+  background-color: var(--color-player-progress);
+  border: .1em solid transparent;
+  height: .83em;
+  border-radius: 12px;
+  transition: .8s;
 }
 
 #player-song {
@@ -111,26 +118,14 @@ a {
   top: 0;
   bottom: 0;
   z-index: -10;
-  background-color: #111;
-  background-position: center center;
-  background-size: 100%;
+  background-color: var(--color-bg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(.5em);
+  filter: blur(.6em);
   position: fixed;
-  transition: background-image 0.5s ease-in;
-  transform: scale(1.03);
-}
-
-footer {
-  float: right;
-  font-size: .5em;
-  margin-top: 3px;
-}
-
-footer a {
-  border: none;
-  text-decoration: underline;
+  transition: .5s ease-in;
+  transform: scale3d(1.03, 1.03, 1.03);
 }
 
 /* Maybe, possibly not the best possible way to implement the album cover scaling
@@ -170,9 +165,6 @@ but, I mean... it works! */
   #player {
     font-size: 1.5em;
   }
-  #links {
-    display: none;
-  }
 }
 
 @media only screen and (max-width: 360px) {
@@ -184,9 +176,5 @@ but, I mean... it works! */
   #player-time {
     float: left;
     top: 0;
-  }
-  footer {
-    float: left;
-    margin-right: 50px;
   }
 }

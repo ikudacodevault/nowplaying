@@ -4,4 +4,6 @@ These versions assume you already have your tokens, as my version of the worker 
 
 Do go through the comments in the files for additional info!
 
-View the fullscreen version in action [here](https://ikudanet.github.io/nowplaying/fullscreen-widget/), and the smaller version [here](https://ikudanet.github.io/nowplaying/small-widget/)!
+View the fullscreen version in action [here](https://nowplaying.icv.ikuda.net/fullscreen-widget/), and the smaller version [here](https://nowplaying.icv.ikuda.net/small-widget/)!
+
+- [@aceikuda](https://github.com/aceikuda)
