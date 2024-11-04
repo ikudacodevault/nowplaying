@@ -1,52 +1,52 @@
 {
-  "timestamp": 1707850238334,
-  "progress_ms": 57905,
+  "timestamp": 1730734767224,
+  "progress_ms": 161160,
   "item": {
     "album": {
       "artists": [
         {
           "external_urls": {
-            "spotify": "https://open.spotify.com/artist/6NeoLSPGwJLfeisvM36SMi"
+            "spotify": "https://open.spotify.com/artist/536BYVgOnRky0xjsPT96zl"
           },
-          "name": "SQUARE ENIX MUSIC"
+          "name": "Two Door Cinema Club"
         }
       ],
       "external_urls": {
-        "spotify": "https://open.spotify.com/album/3VV4BLl2Eik6xVyHXlDjLK"
+        "spotify": "https://open.spotify.com/album/0wNjC8d3ve2L2yaomEWUsa"
       },
       "images": [
         {
           "height": 640,
-          "url": "https://i.scdn.co/image/ab67616d0000b2736011819525a1d54e78836426",
+          "url": "https://i.scdn.co/image/ab67616d0000b273585f3d70dce678a5978a0941",
           "width": 640
         },
         {
           "height": 300,
-          "url": "https://i.scdn.co/image/ab67616d00001e026011819525a1d54e78836426",
+          "url": "https://i.scdn.co/image/ab67616d00001e02585f3d70dce678a5978a0941",
           "width": 300
         },
         {
           "height": 64,
-          "url": "https://i.scdn.co/image/ab67616d000048516011819525a1d54e78836426",
+          "url": "https://i.scdn.co/image/ab67616d00004851585f3d70dce678a5978a0941",
           "width": 64
         }
       ],
-      "name": "FINAL FANTASY XIII-2 Original Soundtrack"
+      "name": "Tourist History"
     },
     "artists": [
       {
         "external_urls": {
-          "spotify": "https://open.spotify.com/artist/3d72A9fpAQyib60DkaqAIM"
+          "spotify": "https://open.spotify.com/artist/536BYVgOnRky0xjsPT96zl"
         },
-        "name": "鈴木光人"
+        "name": "Two Door Cinema Club"
       }
     ],
-    "duration_ms": 196346,
+    "duration_ms": 225426,
     "external_urls": {
-      "spotify": "https://open.spotify.com/track/78twuJpTk8PXjfelEIzOO4"
+      "spotify": "https://open.spotify.com/track/50YnBA3YSkc2tqhJMmglzs"
     },
     "is_local": false,
-    "name": "Parallel Worlds - Aggressive Mix"
+    "name": "Eat That Up, Its Good for You"
   },
   "is_playing": false
 }
