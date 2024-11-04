@@ -7,7 +7,6 @@ var playerElements = {
   background: document.getElementById("player-background"),
   songLink: document.getElementById("player-song-link"),
   artistLink: document.getElementById("player-artist-link"),
-  albumLink: document.getElementById("player-album-link"),
   time: document.getElementById("player-time")
 };
 
@@ -31,7 +30,6 @@ function updatePlayer() { // Replace the URL below with the one to your worker
 
       playerElements.songLink.setAttribute("href", data.item.external_urls.spotify);
       playerElements.artistLink.setAttribute("href", data.item.artists[0].external_urls.spotify);
-      playerElements.albumLink.setAttribute("href", data.item.album.external_urls.spotify);
 
       progressSeconds = Math.ceil(data.progress_ms / 1000);
       totalSeconds = Math.ceil(data.item.duration_ms / 1000);
