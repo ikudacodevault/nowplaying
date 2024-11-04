@@ -36,7 +36,7 @@
 var songData, progressSeconds, totalSeconds, progressInterval;
 
 function updatePlayer() { // Change link below to the URL of your worker
-  fetch(`https://ikudanet.github.io/nowplaying/example-api-response.json`)
+  fetch(`https://nowplaying.icv.ikuda.net/example-api-response.json`)
     .then((response) => response.json())
     .then((data) => {
       if (data.hasOwnProperty("NOTICE")) {
