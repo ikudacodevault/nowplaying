@@ -105,7 +105,7 @@ async function handleNowPlaying(request) {
     });
 
   const corsHeaders = {
-    "Access-Control-Allow-Origin": "set this to https://yourdomain.tld or allow all with: *", // Example: "Access-Control-Allow-Origin": "https://ikuda.net",
+    "Access-Control-Allow-Origin": "set this to https://yourdomain.tld or allow all with: *", // Example: "Access-Control-Allow-Origin": "https://ikuda.eu",
     "Access-Control-Allow-Methods": "GET",
     "Access-Control-Max-Age": "86400",
     "X-Robots-Tag": "noindex",
