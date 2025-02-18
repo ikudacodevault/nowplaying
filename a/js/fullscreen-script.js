@@ -13,7 +13,7 @@ var playerElements = {
 var songData, progressSeconds, totalSeconds, progressInterval;
 
 function updatePlayer() { // Replace the URL below with the one to your worker
-  fetch(`https://nowplaying.icv.ikuda.eu/example-api-response.json`)
+  fetch(`https://nowplaying.icv.ikuda.eu/a/json/example-api-response.json`)
     .then((response) => response.json())
     .then((data) => {
       if (data.hasOwnProperty("NOTICE")) { // You can replace "User" with your name / username

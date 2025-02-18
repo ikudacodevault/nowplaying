@@ -1,0 +1,52 @@
+{
+  "timestamp": 1739878262487,
+  "progress_ms": 159846,
+  "item": {
+    "album": {
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+          },
+          "name": "Lady Gaga"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/2I6LyArz82waG94e9V5B9d"
+      },
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b27325304f6dc9dea023ce4b985c",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e0225304f6dc9dea023ce4b985c",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d0000485125304f6dc9dea023ce4b985c",
+          "width": 64
+        }
+      ],
+      "name": "Abracadabra"
+    },
+    "artists": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+        },
+        "name": "Lady Gaga"
+      }
+    ],
+    "duration_ms": 223398,
+    "external_urls": {
+      "spotify": "https://open.spotify.com/track/5ZLUm9eab8y3tqQ1OhQSHI"
+    },
+    "is_local": false,
+    "name": "Abracadabra"
+  },
+  "is_playing": false
+}

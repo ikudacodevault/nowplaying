@@ -1,9 +1,8 @@
 @font-face {
-  font-family: "Urbanist";
+  font-family: "Zoho Puvi";
   src:
-    url("./fonts/urbanist-variable.woff2") format("woff2"),
-    url("./fonts/urbanist-variable.woff") format("woff");
-  font-weight: 300;
+    url("../fonts/puvi-regular.woff2") format("woff2"),
+    url("../fonts/puvi-regular.woff") format("woff");
   font-display: swap;
 }
 
@@ -19,7 +18,7 @@
   --color-bg: #111;
   --color-player-background: rgba(17, 17, 17, 0.6);
   --color-player-progress: #eee;
-  --font-family: 'Urbanist', Helvetica, Arial, sans-serif;
+  --font-family: 'Zoho Puvi', Helvetica, Arial, sans-serif;
   color-scheme: light dark;
 }
 

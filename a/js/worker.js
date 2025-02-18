@@ -5,7 +5,7 @@ addEventListener("fetch", (event) => {
   event.respondWith(handleNowPlaying(event.request));
 });
 
-function deepRemoveKeys(obj, keysToRemove) { // This function (and the helpful comments) were by ChatGPT, because I'm sleep-deprived and could not figure this out. I did have a badly working version at some point though :)
+function deepRemoveKeys(obj, keysToRemove) { // This function (and the helpful comments) were by ChatGPT, because I'm sleep-deprived and could not figure this out. I did have a badly working version at some point though :) (sorry)
   let modified = false;
 
   // Helper function to recursively remove keys
